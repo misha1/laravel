@@ -22,12 +22,13 @@
             <td>{{$el->desc}}</td>
             <td>{{$el->genre}}</td>
             <td>{{$el->date}}</td>
-            <td><a href="{{route('plastinky-one', $el->id)}}">view</a> <a href="№">update</a> <a href="№">delete</a></td>
+            <td><a href="{{route('plastinky-one', $el->id)}}">view</a> <a href="{{route('plastinky-update', $el->id)}}">update</a> <a href="№">delete</a></td>
 
         </tr>
         @endforeach
         </tbody>
     </table>
+    {{$data->links()}}
 
 @endsection
 
