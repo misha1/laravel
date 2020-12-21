@@ -41,4 +41,9 @@ class PlastinkyController extends Controller
         $plastinky->save();
         return redirect()->route('plastinky-one', $id)->with('success', 'Спасибо, все прошло успешно!');
     }
+    public function delete($id){
+        Plastinky::find($id)->delete();
+        return redirect()->route('plastinky-data')->with('success', 'Спасибо, все прошло успешно!');
+
+    }
 }
