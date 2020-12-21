@@ -2,7 +2,7 @@
     <p class="h5 my-0 mr-md-auto fw-normal">EXAMPLE</p>
     <nav class="my-2 my-md-0 me-md-3">
         <a class="p-2 text-dark" href="{{route('home')}}">Home</a>
-        <a class="p-2 text-dark" href="{{route('about')}}">About</a>
-        <a class="p-2 text-dark" href="{{route('contact')}}">Contact</a>
+        <a class="p-2 text-dark" href="{{route('plastinky')}}">Пластинки</a>
+        <a class="p-2 text-dark" href="{{route('plastinky-data')}}">Список</a>
     </nav>
 </header>

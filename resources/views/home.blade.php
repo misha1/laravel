@@ -8,7 +8,3 @@
     </p>
 @endsection
 
-@section('aside')
-    @parent
-    <p>Доп текст</p>
-@endsection
