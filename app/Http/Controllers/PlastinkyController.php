@@ -26,10 +26,18 @@ class PlastinkyController extends Controller
 
     public function ShowOne($id){
         $plastinky = new Plastinky();
+        if ($plastinky->find($id) === null) {
+            abort(404);
+        }
+        else
         return view('onepl', ['data' => $plastinky->find($id)]);
     }
     public function update($id){
         $plastinky = new Plastinky();
+        if ($plastinky->find($id) === null) {
+            abort(404);
+        }
+        else
         return view('plastinkyUpdate', ['data' => $plastinky->find($id)]);
     }
     public function updateSubmit($id, PlastinkyRequest $req){
