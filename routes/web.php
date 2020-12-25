@@ -12,33 +12,32 @@ Route::get('/register', function () {
     return view('register');
 })->name('register');
 
-Route::get('/plastinky', fn () => view('plastinky'))
-    ->name('plastinky')
+Route::get('/vinylrecords', fn () => view('vinylrecords'))
+    ->name('vinylrecords')
     ->breadcrumbs(fn (Trail $trail) =>
-    $trail->push('Музыкальные Пластинки', route('plastinky'))
+    $trail->push('Музыкальные Пластинки', route('vinylrecords'))
     );
 
 
-Route::post('/contact/submit', [\App\Http\Controllers\ContactController::class, 'submit'])->name('contact-form');
-Route::post('/plastinky/submit', [\App\Http\Controllers\PlastinkyController::class, 'submit'])->name('plastinky-form');
-Route::post('/plastinky/all/{id}/update', [\App\Http\Controllers\PlastinkyController::class, 'updateSubmit'])->name('plastinky-update-submit');
+Route::post('/vinylrecords/submit', [\App\Http\Controllers\VinylrecordsController::class, 'submit'])->name('vinylrecords-form');
+Route::post('/vinylrecords/all/{id}/update', [\App\Http\Controllers\VinylrecordsController::class, 'updateSubmit'])->name('vinylrecords-update-submit');
 
-Route::get('/plastinky/all', [\App\Http\Controllers\PlastinkyController::class, 'allData'])
-    ->name('plastinky-data')
-    ->breadcrumbs(fn (Trail $trail) => $trail->parent('plastinky')->push('Список Пластинок', route('plastinky-data'))
+Route::get('/vinylrecords/all', [\App\Http\Controllers\VinylrecordsController::class, 'allData'])
+    ->name('vinylrecords-data')
+    ->breadcrumbs(fn (Trail $trail) => $trail->parent('vinylrecords')->push('Список Пластинок', route('vinylrecords-data'))
 );
 
-Route::get('/plastinky/all/{id}', [\App\Http\Controllers\PlastinkyController::class, 'ShowOne'])
-    ->name('plastinky-one')
-    ->breadcrumbs(fn (Trail $trail, $id) => $trail->parent('plastinky-data')->push($id , route('plastinky-one', $id))
+Route::get('/vinylrecords/all/{id}', [\App\Http\Controllers\VinylrecordsController::class, 'ShowOne'])
+    ->name('vinylrecords-one')
+    ->breadcrumbs(fn (Trail $trail, $id) => $trail->parent('vinylrecords-data')->push($id , route('vinylrecords-one', $id))
     );
 
-Route::get('/plastinky/all/{id}/update', [\App\Http\Controllers\PlastinkyController::class, 'update'])
-    ->name('plastinky-update')
-    ->breadcrumbs(fn (Trail $trail, $id) => $trail->parent('plastinky-one', $id)->push('Редактирование', route('plastinky-update', $id))
+Route::get('/vinylrecords/all/{id}/update', [\App\Http\Controllers\VinylrecordsController::class, 'update'])
+    ->name('vinylrecords-update')
+    ->breadcrumbs(fn (Trail $trail, $id) => $trail->parent('vinylrecords-one', $id)->push('Редактирование', route('vinylrecords-update', $id))
     );
 
-Route::get('/plastinky/all/{id}/delete', [\App\Http\Controllers\PlastinkyController::class, 'delete'])->name('plastinky-delete');
+Route::get('/vinylrecords/all/{id}/delete', [\App\Http\Controllers\VinylrecordsController::class, 'delete'])->name('vinylrecords-delete');
 
 Route::get('/signout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('auth.signout');
 

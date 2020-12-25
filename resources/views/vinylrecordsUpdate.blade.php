@@ -6,7 +6,7 @@
 @section('content')
     <h2>Изменить пластинки</h2>
 
-    <form action="{{  route('plastinky-update-submit', $data->id) }}" method="post">
+    <form action="{{  route('vinylrecords-update-submit', $data->id) }}" method="post">
         @csrf
 
         <div class="form-group">

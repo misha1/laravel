@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlastinkiesTable extends Migration
+class CreateVinylrecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePlastinkiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Plastinkies', function (Blueprint $table) {
+        Schema::create('vinylrecords', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('genre');
@@ -30,6 +30,6 @@ class CreatePlastinkiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Plastinkies');
+        Schema::dropIfExists('vinylrecords');
     }
 }

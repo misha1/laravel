@@ -10,8 +10,8 @@
         @endif
         @else
         <a class="p-2 text-dark" href="{{ route('auth.signout') }}">Выход ({{\Illuminate\Support\Facades\Auth::user()->name}})</a>
-        <a class="p-2 text-dark" href="{{route('plastinky')}}">Добавить</a>
-        <a class="p-2 text-dark" href="{{route('plastinky-data')}}">Пластинки</a>
+        <a class="p-2 text-dark" href="{{route('vinylrecords')}}">Добавить</a>
+        <a class="p-2 text-dark" href="{{route('vinylrecords-data')}}">Пластинки</a>
         @endguest
     </nav>
 </header>
